@@ -1,0 +1,201 @@
+.brands-cool-section {
+    background: #000;
+    padding: clamp(56px, 8vw, 100px) 0;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.cool-header {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+    padding: 0 clamp(16px, 5vw, 60px);
+}
+
+.header-box {
+    border-left: 4px solid #c8a84b;
+    padding-left: 30px;
+}
+
+.mini-tag {
+    color: #c8a84b;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.4em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.big-title {
+    font-size: clamp(32px, 6vw, 72px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+}
+
+.hollow-text {
+    -webkit-text-stroke: 1.5px #c8a84b;
+    color: transparent;
+}
+
+/* Scroll track */
+.cool-track {
+    display: flex;
+    gap: 20px;
+    padding: 20px clamp(16px, 5vw, 60px) 40px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.cool-track::-webkit-scrollbar {
+    display: none;
+}
+
+.cool-card {
+    flex-shrink: 0;
+    width: clamp(260px, 78vw, 380px);
+    min-height: clamp(360px, 95vw, 480px);
+    background: #09090b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    scroll-snap-align: start;
+}
+
+.cool-card-inner {
+    height: 100%;
+    padding: clamp(24px, 4vw, 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.cool-num {
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-family: 'Cinzel', serif;
+}
+
+.cool-cat {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.cool-name {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.cool-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: 0.4s;
+}
+
+.cool-btn-circle {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: 0.4s;
+}
+
+/* Hover Effects */
+.cool-card:hover {
+    transform: translateY(-15px) rotate(1deg);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: #0f0f13;
+}
+
+.cool-card:hover .cool-desc {
+    color: #999;
+}
+
+.cool-card:hover .cool-btn-circle {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+.cool-card:hover .cool-arrow {
+    filter: invert(1);
+}
+
+.cool-bg-glow {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.cool-card:hover .cool-bg-glow {
+    opacity: 1;
+}
+
+/* Footer & Marquee */
+.cool-footer {
+    margin-top: 60px;
+}
+
+.cool-stat-text {
+    text-align: center;
+    color: #c8a84b;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    letter-spacing: 0.1em;
+}
+
+.cool-marquee {
+    display: flex;
+    white-space: nowrap;
+    border-y: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 0;
+    background: rgba(200, 168, 75, 0.03);
+    overflow: hidden;
+}
+
+.cool-marquee span {
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: #333;
+    letter-spacing: 0.5em;
+    animation: marqueeMove 20s linear infinite;
+}
+
+@keyframes marqueeMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cool-track { padding: 20px 16px 30px; }
+    .cool-card { width: clamp(250px, 82vw, 300px); min-height: 390px; padding: 0; }
+    .cool-card-inner { padding: 30px; }
+    .cool-header { padding: 0 16px; }
+    .cool-name { font-size: 1.8rem; }
+}
