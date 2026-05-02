@@ -1,0 +1,186 @@
+.video-showcase-master {
+  padding: 6rem 5%;
+  background-color: #0a0a0f;
+  position: relative;
+  overflow: hidden;
+}
+
+.v-showcase-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.v-mini-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #c8a84b;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(200, 168, 75, 0.3);
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+}
+
+.v-big-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.v-hollow-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  opacity: 0.8;
+}
+
+.v-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.v-showcase-card {
+  cursor: pointer;
+}
+
+.v-thumbnail-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: #111;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.v-showcase-card:hover .v-thumbnail-wrapper {
+  transform: translateY(-5px);
+  border-color: rgba(200, 168, 75, 0.4);
+}
+
+.v-thumb-img, .v-thumb-vid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.v-showcase-card:hover .v-thumb-img,
+.v-showcase-card:hover .v-thumb-vid {
+  transform: scale(1.05);
+}
+
+.v-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.v-showcase-card:hover .v-play-overlay {
+  opacity: 1;
+}
+
+.v-play-btn {
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(200, 168, 75, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.v-play-btn svg {
+  margin-left: 4px;
+}
+
+.v-showcase-card:hover .v-play-btn {
+  transform: scale(1);
+  background: rgba(0,0,0,0.8);
+}
+
+.v-card-info {
+  margin-top: 1.2rem;
+}
+
+.v-client {
+  font-size: 0.8rem;
+  color: #c8a84b;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  display: block;
+}
+
+.v-title {
+  margin: 0.3rem 0 0;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.v-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,5,8,0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+}
+
+.v-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+.v-iframe-player, .v-html-player {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.v-close-modal {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-bottom: 20px;
+  margin-right: -40px;
+}
+
+.v-close-modal:hover {
+  color: #c8a84b;
+}
+
+@media(max-width: 768px) {
+  .v-big-title { font-size: 2.5rem; }
+  .v-showcase-grid { grid-template-columns: 1fr; }
+  .v-close-modal { margin-right: 0; }
+}

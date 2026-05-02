@@ -1,0 +1,134 @@
+.sidebar {
+  background: linear-gradient(180deg, #3e4f8f 0%, #3d497e 100%);
+  color: #cdd4f2;
+  width: 250px;
+  min-height: 100vh;
+  padding: 24px 18px;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, width 0.25s ease, padding 0.25s ease, opacity 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.hidden {
+  width: 0;
+  padding-inline: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brand {
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0 0 24px;
+}
+
+.menu-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin: 0 0 14px;
+  opacity: 0.7;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.96rem;
+  cursor: pointer;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.13);
+  color: #fff;
+}
+
+.logout-container {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logout-button {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffcccc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.logout-button:hover {
+  background: rgba(255, 90, 90, 0.2);
+  color: #ffb3b3;
+  border-color: rgba(255, 90, 90, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: min(82vw, 280px);
+    min-height: auto;
+    overflow-y: auto;
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+    z-index: 11;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    width: min(82vw, 280px);
+    opacity: 1;
+    padding: 24px 18px;
+    pointer-events: auto;
+  }
+
+  .sidebar.hidden {
+    width: min(82vw, 280px);
+    padding: 24px 18px;
+    opacity: 1;
+    transform: translateX(-105%);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 88vw;
+    padding: 20px 14px;
+  }
+
+  .sidebar.open,
+  .sidebar.hidden {
+    width: 88vw;
+    padding: 20px 14px;
+  }
+
+  .brand {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+}

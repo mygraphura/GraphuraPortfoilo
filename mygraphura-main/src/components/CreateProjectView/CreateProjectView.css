@@ -1,0 +1,214 @@
+.create-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 20px;
+}
+
+.create-left,
+.create-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-card {
+  background: #ffffff;
+  border: 1px solid #dce3ef;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 10px 24px rgba(21, 32, 57, 0.05);
+}
+
+.create-card h3 {
+  margin: 0 0 12px;
+  color: #293552;
+}
+
+.create-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 12px;
+  color: #4f5d81;
+  font-size: 0.9rem;
+}
+
+.create-card input,
+.create-card textarea,
+.create-card select {
+  border: 1px solid #d3ddee;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+}
+
+.create-card small {
+  color: #7b86a8;
+}
+
+.create-thumb {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #dce3ee;
+  margin-bottom: 12px;
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.editor-toolbar button {
+  border: 1px solid #d4deef;
+  background: #f8fafe;
+  border-radius: 7px;
+  min-width: 34px;
+  height: 32px;
+  color: #46547b;
+  cursor: pointer;
+}
+
+.attachments-section {
+  margin-top: 10px;
+}
+
+.attachments-title {
+  margin: 0;
+  color: #374567;
+  font-weight: 600;
+}
+
+.attachments-subtitle {
+  margin: 4px 0 10px;
+  color: #7b86a8;
+  font-size: 0.9rem;
+}
+
+.upload-dropzone {
+  border: 2px dashed #d9dfec;
+  border-radius: 10px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #546187;
+  background: #fbfcff;
+  text-align: center;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.upload-dropzone input {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.attachment-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.attachment-item {
+  margin: 0;
+  border: 1px solid #dce3ef;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+}
+
+.attachment-item img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.attachment-item figcaption {
+  margin-top: 6px;
+  color: #4c5a80;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove-attachment {
+  margin-top: 6px;
+  width: 100%;
+  border: 1px solid #d9dfec;
+  border-radius: 6px;
+  background: #f4f7fd;
+  color: #4e5b81;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.chip-title {
+  margin: 2px 0 8px;
+  color: #5c6888;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid #d4dced;
+  background: #f7f9ff;
+  color: #4e5f8a;
+  border-radius: 999px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.chip.active {
+  background: #42558f;
+  border-color: #42558f;
+  color: #fff;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.form-actions .ghost {
+  border: 1px solid #d4dded;
+  border-radius: 8px;
+  background: #f4f7fd;
+  color: #4e5b81;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .create-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .upload-dropzone {
+    min-height: 130px;
+    padding: 12px;
+  }
+
+  .attachment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
