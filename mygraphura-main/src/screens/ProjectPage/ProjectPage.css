@@ -754,7 +754,8 @@
   display: flex;
   gap: 18px;
   overflow-x: auto;
-  padding: 22px;
+  padding: 22px 22px 22px clamp(30px, 4vw, 44px);
+  scroll-padding-left: clamp(30px, 4vw, 44px);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
